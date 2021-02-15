@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var gameState : GameState
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        ZStack{
+            
+            LinearGradient(gradient: Gradient(colors: [.purple, .blue, .black]), startPoint: .top, endPoint: .bottom)
+            
+            Group{
+                if gameState.isGameRunning {
+                    
+                    GameView()
+                    
+                } else {
+                    
+                    SettingsView()
+                }
+            }
+        }
     }
 }
 
