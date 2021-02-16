@@ -42,9 +42,7 @@ struct DifficultyButton : View {
                 .frame(width: 100, height: 50)
                 .font(.title)
                 .foregroundColor(.white)
-                .padding(animate ? 2 : 0)
-                .background(animate ? Color.green : nil)
-                
+                .border(animate ? Color.white : Color.black, width: 2)
         }
     }
 }
